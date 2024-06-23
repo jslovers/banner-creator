@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+}
+
+.banner {
+  flex: 1;
+  padding: 20px;
+}
+
+.form {
+  flex: 1;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-left: 1px solid #ddd;
+  height: 800px;
+  overflow: auto;
+}
