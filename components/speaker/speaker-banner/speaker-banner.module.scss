@@ -146,4 +146,39 @@
     background-color: #ffffff;
     padding: 10px;
   }
+
+  .qr-code-hide {
+    display: none;
+  }
+}
+
+.multi-speaker {
+  .header {
+    padding: 30px 20px 0;
+  }
+
+  .content {
+    display: flex;
+    row-gap: 20px;
+    column-gap: 60px;
+    flex-wrap: wrap;
+    padding-top: 100px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .content img {
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border: 4px solid #ffd700;
+  }
+
+  .details-multi {
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+  }
 }

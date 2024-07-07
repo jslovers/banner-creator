@@ -17,7 +17,7 @@ const SpeakerEditor: React.FC = () => {
     sponsor: "Company Name",
     eventLink: "https://jslovers.com",
     qrcodePosition: "bottomRight",
-    isCollab: true,
+    isCollab: false,
     collabLogoSrc: "/path-to-your-image.jpg",
     speakers: [
       {
@@ -71,7 +71,7 @@ const SpeakerEditor: React.FC = () => {
       link.download = "banner.png";
       document.body.appendChild(link);
       link.click();
-      //document.body.removeChild(link);
+      document.body.removeChild(link);
     }
   };
 

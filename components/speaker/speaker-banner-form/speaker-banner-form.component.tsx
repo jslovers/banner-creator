@@ -177,6 +177,18 @@ const SpeakerBannerForm: React.FC<SpeakerBannerFormProps> = ({
             />
             <label htmlFor="topLeft">Top Left</label>
           </div>
+          <div>
+            <input
+              type="radio"
+              id="hide"
+              name="qrcodePosition"
+              value="hide"
+              className="mr-1"
+              checked={values.qrcodePosition === "hide"}
+              onChange={handleChange}
+            />
+            <label htmlFor="hide">Hide</label>
+          </div>
         </fieldset>
       </div>
       <div className="flex flex-col">

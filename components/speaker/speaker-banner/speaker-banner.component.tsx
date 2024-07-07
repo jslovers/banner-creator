@@ -22,7 +22,7 @@ export interface SpeakerBannerProps {
   eventLink: string;
   isCollab?: boolean;
   collabLogoSrc?: string;
-  qrcodePosition: "topLeft" | "bottomRight";
+  qrcodePosition: "topLeft" | "bottomRight" | "hide";
 }
 
 const SpeakerBanner: React.FC<SpeakerBannerProps> = ({
@@ -42,7 +42,7 @@ const SpeakerBanner: React.FC<SpeakerBannerProps> = ({
   return (
     <div
       className={`${Styles["speaker-banner"]} ${
-        speakers.length > 1 ? Styles["multi-speaker"] : ""
+        speakers.length > 2 ? Styles["multi-speaker"] : ""
       }`}
     >
       <div className={Styles["header"]}>
@@ -53,10 +53,20 @@ const SpeakerBanner: React.FC<SpeakerBannerProps> = ({
         {speakers.map((speaker, index) => (
           <div key={index} className={Styles["speaker"]}>
             <img src={speaker.speakerImageSrc} alt={speaker.speakerName} />
-            <div className={Styles["details"]}>
+            <div
+              className={`${
+                speakers.length > 2
+                  ? Styles["details-multi"]
+                  : Styles["details"]
+              }`}
+            >
               <h3>{speaker.speakerName}</h3>
-              <p>{speaker.speakerTitle}</p>
-              <p>{speaker.topic}</p>
+              {speakers.length <= 2 && (
+                <>
+                  <p>{speaker.speakerTitle}</p>
+                  <p>{speaker.topic}</p>
+                </>
+              )}
               <p>{speaker.company}</p>
             </div>
           </div>
@@ -99,6 +109,8 @@ const SpeakerBanner: React.FC<SpeakerBannerProps> = ({
         className={`${
           qrcodePosition === "topLeft"
             ? Styles["qr-code-top"]
+            : qrcodePosition === "hide"
+            ? Styles["qr-code-hide"]
             : Styles["qr-code-bottom"]
         }`}
       >
