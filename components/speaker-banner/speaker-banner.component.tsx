@@ -71,9 +71,11 @@ const SpeakerBanner: React.FC<SpeakerBannerProps> = ({
             <span className={Styles["icon"]}>📍</span> {location}
           </p>
         </div>
-        <div className={Styles["sponsor"]}>
-          <p>Sponsor: {sponsor}</p>
-        </div>
+        {sponsor && (
+          <div className={Styles["sponsor"]}>
+            <p>Sponsor: {sponsor}</p>
+          </div>
+        )}
       </div>
       <div className={Styles["logo"]}>
         <Image
