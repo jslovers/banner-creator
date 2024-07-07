@@ -62,14 +62,16 @@ const SpeakerEditor: React.FC = () => {
   const handleDownload = async () => {
     const element = document.getElementById("banner");
     if (element) {
-      const canvas = await html2canvas(element);
+      const canvas = await html2canvas(element, {
+        scale: 2,
+      });
       const data = canvas.toDataURL("image/png");
       const link = document.createElement("a");
       link.href = data;
       link.download = "banner.png";
       document.body.appendChild(link);
       link.click();
-      document.body.removeChild(link);
+      //document.body.removeChild(link);
     }
   };
 

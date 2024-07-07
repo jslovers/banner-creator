@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  Speaker,
-  SpeakerBannerProps,
-} from "../speaker-banner/speaker-banner.component";
+import { SpeakerBannerProps } from "../speaker-banner/speaker-banner.component";
 
 interface SpeakerBannerFormProps {
   values: SpeakerBannerProps;
@@ -18,13 +15,11 @@ const SpeakerBannerForm: React.FC<SpeakerBannerFormProps> = ({
   onCollabImageChange,
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    debugger;
     const { name, value } = e.target;
     onChange({ ...values, [name]: value });
   };
 
   const handleBooleanChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    debugger;
     const { name } = e.target;
     onChange({
       ...values,

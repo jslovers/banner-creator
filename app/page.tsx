@@ -1,7 +1,5 @@
-import SpeakerEditor from "@/components/speaker-editor/speaker-editor.component";
+import SpeakerEditor from "@/components/speaker/speaker-editor/speaker-editor.component";
 
 export default function Home() {
-  return (
-      <SpeakerEditor/>
-  );
+  return <SpeakerEditor />;
 }
