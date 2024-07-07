@@ -20,6 +20,9 @@ export interface SpeakerBannerProps {
   location: string;
   sponsor: string;
   eventLink: string;
+  isCollab?: boolean;
+  collabLogoSrc?: string;
+  qrcodePosition: "topLeft" | "bottomRight";
 }
 
 const SpeakerBanner: React.FC<SpeakerBannerProps> = ({
@@ -30,9 +33,11 @@ const SpeakerBanner: React.FC<SpeakerBannerProps> = ({
   sponsor,
   eventLink,
   speakers,
+  isCollab,
+  collabLogoSrc,
+  qrcodePosition,
 }: SpeakerBannerProps) => {
-
-    console.log(Styles);
+  console.log(Styles);
 
   return (
     <div
@@ -78,7 +83,23 @@ const SpeakerBanner: React.FC<SpeakerBannerProps> = ({
           alt="JSLovers Logo"
         />
       </div>
-      <div className={Styles["qr-code"]}>
+      {isCollab && collabLogoSrc && (
+        <div className={Styles["collab-logo"]}>
+          <Image
+            src={collabLogoSrc}
+            width={100}
+            height={100}
+            alt="Collab Logo"
+          />
+        </div>
+      )}
+      <div
+        className={`${
+          qrcodePosition === "topLeft"
+            ? Styles["qr-code-top"]
+            : Styles["qr-code-bottom"]
+        }`}
+      >
         <QRCode value={eventLink} />
       </div>
     </div>

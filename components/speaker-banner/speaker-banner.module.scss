@@ -31,10 +31,17 @@
 
   .content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     position: relative;
     align-items: center;
+    justify-content: space-around;
     margin: -100px 30px 0;
+  }
+
+  .speaker {
+    display: flex;
+    flex-direction: column;
+    position: relative;
   }
 
   .content img {
@@ -49,14 +56,14 @@
     background-color: #ffd700;
     padding: 10px;
     position: absolute;
-    width: 50%;
+    width: 300px;
     top: 180px;
     border-radius: 12px;
     color: #1a1a40;
     text-align: center;
     transform: rotate(-5deg);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    left: 200px;
+    left: -35px;
   }
 
   .details h3 {
@@ -106,7 +113,31 @@
     }
   }
 
-  .qr-code {
+  .collab-logo {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    margin-right: 10px;
+    top: 145px;
+    right: 20px;
+
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+  }
+
+  .qr-code-top {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 8px;
+  }
+
+  .qr-code-bottom {
     position: absolute;
     bottom: 100px;
     right: 20px;
