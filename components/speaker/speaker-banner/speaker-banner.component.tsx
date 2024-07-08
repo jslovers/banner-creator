@@ -45,7 +45,11 @@ const SpeakerBanner: React.FC<SpeakerBannerProps> = ({
         speakers.length > 2 ? Styles["multi-speaker"] : ""
       }`}
     >
-      <div className={Styles["header"]}>
+      <div
+        className={`${Styles["header"]} ${
+          isCollab ? Styles["header-with-collab"] : ""
+        }`}
+      >
         <h1>{title}</h1>
         <h2>{subtitle}</h2>
       </div>

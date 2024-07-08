@@ -64,6 +64,9 @@ const SpeakerEditor: React.FC = () => {
     if (element) {
       const canvas = await html2canvas(element, {
         scale: 2,
+        allowTaint: true,
+        height: element.clientHeight,
+        width: element.clientWidth,
       });
       const data = canvas.toDataURL("image/png");
       const link = document.createElement("a");
