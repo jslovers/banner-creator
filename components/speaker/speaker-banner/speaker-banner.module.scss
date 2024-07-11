@@ -1,6 +1,6 @@
 .speaker-banner {
-  width: 800px;
-  height: 800px;
+  width: 750px;
+  height: 750px;
   background: linear-gradient(to bottom right, #0f0f27, #00059e);
   border-radius: 20px;
   overflow: hidden;
@@ -24,17 +24,28 @@
 
   .header h2 {
     font-size: 2.2em;
-    margin: 10px 0;
+    margin: 10px auto;
     color: #ffffff;
     font-weight: 700;
   }
 
+  .header-with-collab h2 {
+    width: 60% !important;
+  }
+
   .content {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+    margin: -100px 30px 0;
+  }
+
+  .speaker {
     display: flex;
     flex-direction: column;
     position: relative;
-    align-items: center;
-    margin: -100px 30px 0;
   }
 
   .content img {
@@ -49,14 +60,14 @@
     background-color: #ffd700;
     padding: 10px;
     position: absolute;
-    width: 50%;
+    width: 300px;
     top: 180px;
     border-radius: 12px;
     color: #1a1a40;
     text-align: center;
     transform: rotate(-5deg);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    left: 200px;
+    left: -35px;
   }
 
   .details h3 {
@@ -106,12 +117,75 @@
     }
   }
 
-  .qr-code {
+  .collab-logo {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    margin-right: 10px;
+    top: 145px;
+    right: 20px;
+
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+  }
+
+  .qr-code-top {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 8px;
+  }
+
+  .qr-code-bottom {
     position: absolute;
     bottom: 100px;
     right: 20px;
     border-radius: 10px;
     background-color: #ffffff;
     padding: 10px;
+  }
+
+  .qr-code-hide {
+    display: none;
+  }
+}
+
+.multi-speaker {
+  .header {
+    padding: 30px 20px 0;
+  }
+
+  .header h2 {
+    width: 60%;
+  }
+
+  .content {
+    display: flex;
+    row-gap: 20px;
+    column-gap: 60px;
+    flex-wrap: wrap;
+    padding-top: 100px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .content img {
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border: 4px solid #ffd700;
+  }
+
+  .details-multi {
+    padding: 10px;
+    color: #fff;
+    text-align: center;
   }
 }

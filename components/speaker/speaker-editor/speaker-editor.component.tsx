@@ -16,6 +16,9 @@ const SpeakerEditor: React.FC = () => {
     location: "Location, City Or Online",
     sponsor: "Company Name",
     eventLink: "https://jslovers.com",
+    qrcodePosition: "bottomRight",
+    isCollab: false,
+    collabLogoSrc: "/path-to-your-image.jpg",
     speakers: [
       {
         speakerName: "John Doe",
@@ -46,10 +49,25 @@ const SpeakerEditor: React.FC = () => {
     reader.readAsDataURL(file);
   };
 
+  const handleCollabImageChange = (file: File) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (reader.result) {
+        setValues({ ...values, collabLogoSrc: reader.result as string });
+      }
+    };
+    reader.readAsDataURL(file);
+  };
+
   const handleDownload = async () => {
     const element = document.getElementById("banner");
     if (element) {
-      const canvas = await html2canvas(element);
+      const canvas = await html2canvas(element, {
+        scale: 2,
+        allowTaint: true,
+        height: element.clientHeight,
+        width: element.clientWidth,
+      });
       const data = canvas.toDataURL("image/png");
       const link = document.createElement("a");
       link.href = data;
@@ -70,6 +88,7 @@ const SpeakerEditor: React.FC = () => {
           values={values}
           onChange={handleFormChange}
           onImageChange={handleImageChange}
+          onCollabImageChange={handleCollabImageChange}
         />
         <button
           onClick={handleDownload}
