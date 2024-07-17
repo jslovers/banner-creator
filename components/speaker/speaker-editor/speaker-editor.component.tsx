@@ -7,6 +7,7 @@ import SpeakerBanner, {
   Speaker,
   SpeakerBannerProps,
 } from "../speaker-banner/speaker-banner.component";
+import Nav from "@/components/nav/nav.component";
 
 const SpeakerEditor: React.FC = () => {
   const [values, setValues] = useState<SpeakerBannerProps>({
@@ -84,6 +85,7 @@ const SpeakerEditor: React.FC = () => {
         <SpeakerBanner {...values} />
       </div>
       <div className={styles.form}>
+        <Nav />
         <SpeakerBannerForm
           values={values}
           onChange={handleFormChange}

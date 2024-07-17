@@ -37,8 +37,6 @@ const SpeakerBanner: React.FC<SpeakerBannerProps> = ({
   collabLogoSrc,
   qrcodePosition,
 }: SpeakerBannerProps) => {
-  console.log(Styles);
-
   return (
     <div
       className={`${Styles["speaker-banner"]} ${
